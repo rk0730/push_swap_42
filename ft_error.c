@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:18:27 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/12 20:27:39 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/05/13 20:22:20 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,59 +18,66 @@
 
 #include "ft_push_swap.h"
 
-//c_boxをatoiした時にintの範囲を超えないかどうか確認する　大丈夫であればintを返し、範囲外であればexit
-static int	*ft_check_range(char *str)
+// c_boxをatoiした時にintの範囲を超えないかどうか確認する　大丈夫であればintを返し、範囲外であればexit
+static int	ft_check_range(char *str)
 {
 	int		sign;
 	long	result;
+	int		i;
 
-	if (ft_strcmp(str, "-2147483648") == 0)
+	if (ft_strncmp(str, "-2147483648", 11) == 0)
 		return (-2147483648);
+	i = 0;
 	sign = 1;
 	result = 0;
-	if (*str == '-')
+	if (str[i] == '-')
 	{
-		str++;
+		i++;
 		sign = -1;
 	}
-	while (*str)
+	while (str[i])
 	{
-		result += *str - '0';
+		result = result * 10 + (str[i] - '0');
 		if (result > INT_MAX)
 			ft_exit();
-		str++;
+		i++;
 	}
 	return (sign * (int)result);
 }
 
-//c_boxに数字以外の文字がないかどうかを確認する　エラーがあれば1を返す、なければ0を返す
+// c_boxに数字以外の文字がないかどうかを確認する　エラーがあれば1を返す、なければ0を返す
 static int	ft_check_num(char **c_box)
 {
-	while (*c_box)
+	int i;
+	int j;
+
+	i = 0;
+	while (c_box[i])
 	{
-		if (**c_box == '-')
-			*c_box++;
-		while (**c_box)
+		j = 0;
+		if (c_box[i][j] == '-')
+			j++;
+		while (c_box[i][j])
 		{
-			if (ft_isdigit(**c_box) == 0)
+			if (ft_isdigit(c_box[i][j]) == 0)
 				return (1);
-			*c_box++;
+			j++;
 		}
-		c_box++;
+		i++;
 	}
+	return (0);
 }
 
-//c_boxからnum_boxを生成する
-static int	**ft_gen_num_box(char **c_box)
+// c_boxからnum_boxを生成する
+static int	*ft_gen_num_array(char **c_box, int *len_p)
 {
-	int	**num_box;
+	int	*num_box;
 	int	i;
-	int	len;
 
-	len = 0;
-	while (c_box[len])
-		len++;
-	num_box = (int **)malloc(sizeof(int) * (len + 1));
+	i = 0;
+	while (c_box[i])
+		i++;
+	num_box = (int *)malloc(sizeof(int) * i);
 	if (!num_box)
 		ft_free_box_exit(&c_box);
 	i = 0;
@@ -79,7 +86,7 @@ static int	**ft_gen_num_box(char **c_box)
 		num_box[i] = ft_check_range(c_box[i]);
 		i++;
 	}
-	num_box[i] = NULL;
+	*len_p = i;
 	return (num_box);
 }
 
@@ -91,30 +98,45 @@ static char	**ft_gen_c_box(int argc, char **argv)
 	i = 0;
 	c_box = (char **)malloc(sizeof(char *) * argc);
 	if (!c_box)
-		ft_free_box_exit(&c_box);
+		ft_exit();
+	while (i < argc)
+		c_box[i++] = NULL;
+	i = 0;
 	while (i < argc - 1)
 	{
-		c_box[i] = argv[i + 1];
+		c_box[i] = ft_strdup(argv[i + 1]);
+		if (c_box[i] == NULL)
+			ft_free_box_exit(&c_box);
 		i++;
 	}
-	c_box[argc - 1] = NULL;
 	return (c_box);
 }
 
-int	*ft_error(int argc, char **argv)
+int	*ft_error(int argc, char **argv, int *len_p)
 {
 	char	**c_box;
-	char	**num_box;
+	int		*array;
 
 	if (argc == 1)
-		return (NULL);
+		exit(0);
 	if (argc == 2)
 	{
 		c_box = ft_split(argv[1], ' ');
 		if (!c_box)
-			ft_free_box_exit(&c_box);
+			ft_exit();
 	}
 	else
 		c_box = ft_gen_c_box(argc, argv);
-	num_box = ft_gen_num_box(c_box);
+	if (ft_check_num(c_box) == 1)
+		ft_free_box_exit(&c_box);
+	array = ft_gen_num_array(c_box, len_p);
+	ft_free_box(&c_box);
+	if (*len_p == 0)
+		exit(0);
+	if (ft_dup_check(array, *len_p) == 1)
+	{
+		free(array);
+		ft_exit();
+	}
+	return (array);
 }

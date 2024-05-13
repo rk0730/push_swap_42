@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   ft_error2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/12 19:24:22 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/13 19:12:15 by kitaoryoma       ###   ########.fr       */
+/*   Created: 2024/05/13 20:18:52 by kitaoryoma        #+#    #+#             */
+/*   Updated: 2024/05/13 20:20:48 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_free_box(char ***box_p)
+//arrayに同じ数字があったら1を返す
+int	ft_dup_check(int *array, int num)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while ((*box_p)[i] != NULL)
+	while (i < num)
 	{
-		free((*box_p)[i]);
+		j = i + 1;
+		while (j < num)
+		{
+			if (array[i] == array[j])
+				return (1);
+			j++;
+		}
 		i++;
 	}
-	free(*box_p);
-}
-
-void	ft_free_box_exit(char ***box_p)
-{
-	ft_free_box(box_p);
-	ft_printf("Error\n");
-	exit(1);
-}
-
-void	ft_exit(void)
-{
-	ft_printf("Error\n");
-	exit(1);
+	return (0);
 }

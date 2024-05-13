@@ -3,6 +3,9 @@ AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_main.c \
+	ft_error.c \
+	ft_error2.c \
+	ft_exit.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -36,3 +39,8 @@ fclean: clean
 	make -C $(FTPRINTF_DIR) fclean
 
 re: fclean all
+
+sanitize: $(OBJS) $(LIBFT) $(FTPRINTF)
+	$(CC) $(CFLAGS) -fsanitize=address -g -I. -o $(NAME) $(OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
+
+.PHONY: all clean fclean re sanitize
