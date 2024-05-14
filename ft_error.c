@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:18:27 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/13 20:22:20 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/05/14 11:59:15 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static int	ft_check_range(char *str)
 // c_boxに数字以外の文字がないかどうかを確認する　エラーがあれば1を返す、なければ0を返す
 static int	ft_check_num(char **c_box)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (c_box[i])
@@ -131,7 +131,7 @@ int	*ft_error(int argc, char **argv, int *len_p)
 		ft_free_box_exit(&c_box);
 	array = ft_gen_num_array(c_box, len_p);
 	ft_free_box(&c_box);
-	if (*len_p == 0)
+	if (*len_p <= 1)
 		exit(0);
 	if (ft_dup_check(array, *len_p) == 1)
 	{
