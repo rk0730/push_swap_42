@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:35 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/15 14:12:38 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/05/15 16:44:28 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef	struct s_node {
 	t_node	*prev;
 } t_node;
 
+void	ft_free_node(t_node *list);
 void	ft_free_box_exit(char ***c_box_p);
 void	ft_free_box(char ***box_p);
 void	ft_exit(void);

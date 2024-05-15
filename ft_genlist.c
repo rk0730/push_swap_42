@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:35:36 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/05/15 14:59:02 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/05/15 16:55:26 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,15 @@ static int	**ft_gen_id_array(int *array, int len)
 	if (!id_array)
 		ft_malloc_exit();
 	sort_array = ft_gen_sort_array(array, len);
+	//表示
+	ft_printf("sort_array\n");
+	int count = 0;
+	while (count < len)
+	{
+		ft_printf("%d\n", sort_array[count]);
+		count++;
+	}
+	//
 	i = 0;
 	while (i < len)
 	{
@@ -147,6 +156,15 @@ t_node	**ft_gen_list(int **array_p, int len)
 	t_node	*list_of_list[2];
 
 	id_array_p = ft_gen_id_array(*array_p, len);
+	//表示
+	int	i = 0;
+	ft_printf("id_array\n");
+	while (i < len)
+	{
+		ft_printf("%d\n", (*array_p)[i]);
+		i++;
+	}
+	//
 	free(*array_p);
 	list_a = ft_new_list(*id_array_p, len);
 	free(*id_array_p);
