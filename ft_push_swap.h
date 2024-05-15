@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:35 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/13 20:21:24 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/05/15 14:12:38 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@
 // #include <fcntl.h>
 #include <limits.h>
 
-// typedef	struct s_node {
-// 	int		data;
-// 	t_node	*next;
-// 	t_node	*prev;
-// } t_node;
+typedef	struct s_node {
+	int		data;
+	t_node	*next;
+	t_node	*prev;
+} t_node;
 
 void	ft_free_box_exit(char ***c_box_p);
 void	ft_free_box(char ***box_p);
 void	ft_exit(void);
+void	ft_malloc_exit(void);
 int		*ft_error(int argc, char **argv, int *len_p);
 int		ft_dup_check(int *array, int num);
 
