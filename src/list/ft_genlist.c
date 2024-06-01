@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_genlist.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:35:36 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/05/15 16:55:26 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/01 14:35:43 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	ft_sort_array(int *array, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (j < len)
+		while (j < len - 1)
 		{
 			if (array[j] > array[j + 1])
 			{
@@ -96,8 +96,6 @@ static int	*ft_gen_sort_array(int *array, int len)
 {
 	int	*sort_array;
 	int	i;
-	int	j;
-	int	tmp;
 
 	sort_array = (int *)malloc(sizeof(int) * len);
 	if (!sort_array)
@@ -112,7 +110,7 @@ static int	*ft_gen_sort_array(int *array, int len)
 	return (sort_array);
 }
 
-static int	**ft_gen_id_array(int *array, int len)
+static int	*ft_gen_id_array(int *array, int len)
 {
 	int	*id_array;
 	int	*sort_array;
@@ -123,15 +121,6 @@ static int	**ft_gen_id_array(int *array, int len)
 	if (!id_array)
 		ft_malloc_exit();
 	sort_array = ft_gen_sort_array(array, len);
-	//表示
-	ft_printf("sort_array\n");
-	int count = 0;
-	while (count < len)
-	{
-		ft_printf("%d\n", sort_array[count]);
-		count++;
-	}
-	//
 	i = 0;
 	while (i < len)
 	{
@@ -145,32 +134,23 @@ static int	**ft_gen_id_array(int *array, int len)
 		i++;
 	}
 	free(sort_array);
-	return (&id_array);
+	return (id_array);
 }
 
 t_node	**ft_gen_list(int **array_p, int len)
 {
-	int		**id_array_p;
+	int		*id_array;
 	t_node	*list_a;
 	t_node	*list_b;
-	t_node	*list_of_list[2];
+	t_node	**list_ab;
 
-	id_array_p = ft_gen_id_array(*array_p, len);
-	//表示
-	int	i = 0;
-	ft_printf("id_array\n");
-	while (i < len)
-	{
-		ft_printf("%d\n", (*array_p)[i]);
-		i++;
-	}
-	//
+	id_array = ft_gen_id_array(*array_p, len);
+	list_ab = (t_node **)malloc(sizeof(t_node *) * 2);
 	free(*array_p);
-	list_a = ft_new_list(*id_array_p, len);
-	free(*id_array_p);
-	list_b = (t_node *)malloc(sizeof(t_node));
-	list_b->data = -1;
-	list_of_list[0] = list_a;
-	list_of_list[1] = list_b;
-	return (list_of_list);
+	list_a = ft_new_list(id_array, len);
+	free(id_array);
+	list_b = ft_new_list(NULL, 0);
+	list_ab[0] = list_a;
+	list_ab[1] = list_b;
+	return (list_ab);
 }

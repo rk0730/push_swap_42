@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:24:22 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/15 16:45:09 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/01 14:05:45 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_free_node(t_node *list)
 {
 	t_node	*tmp;
-	t_list	*target;
+	t_node	*target;
 
 	tmp = list;
 	while (tmp->data != -1)

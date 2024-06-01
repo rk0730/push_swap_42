@@ -2,10 +2,24 @@ CC = cc
 AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_main.c \
-	ft_error.c \
-	ft_error2.c \
-	ft_exit.c \
+SRC_DIR = src
+
+SRCS = $(SRC_DIR)/ft_main.c \
+
+LIST = list.a
+LIST_DIR = $(SRC_DIR)/list
+
+LIST_SRCS = $(LIST_DIR)/ft_error.c \
+	$(LIST_DIR)/ft_error2.c \
+	$(LIST_DIR)/ft_exit.c \
+	$(LIST_DIR)/ft_genlist.c \
+	$(LIST_DIR)/ft_list_info.c \
+	$(LIST_DIR)/ft_operations.c \
+	$(LIST_DIR)/ft_operations2.c \
+	$(LIST_DIR)/ft_operations3.c
+
+LIST_OBJS = $(LIST_SRCS:.c=.o)
+
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,8 +33,11 @@ FTPRINTF = libftprintf.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT) $(FTPRINTF)
-	$(CC) $(CFLAGS) -I. -o $(NAME) $(OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
+$(NAME): $(OBJS) $(LIST) $(LIBFT) $(FTPRINTF)
+	$(CC) $(CFLAGS) -I. -o $(NAME) $(OBJS) $(LIST) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
+
+$(LIST): $(LIST_OBJS) $(LIBFT) $(FTPRINTF)
+	$(AR) $(LIST) $(LIST_OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR) all
