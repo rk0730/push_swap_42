@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 14:44:08 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/01 15:33:37 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/02 01:43:21 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_list.h"
 
 //list_aの先頭にあるノードと2番目のノードのデータを入れ替える
 void	ft_swap_a(t_node **list_ab)

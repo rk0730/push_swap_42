@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:12:32 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/01 16:26:34 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/02 01:43:32 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_list.h"
 
 void	ft_reverse_rotate_a(t_node **list_ab)
 {

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/12 17:17:35 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/01 16:26:54 by rkitao           ###   ########.fr       */
+/*   Created: 2024/06/02 01:40:47 by kitaoryoma        #+#    #+#             */
+/*   Updated: 2024/06/02 01:41:34 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-# include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "../../libft/libft.h"
+# include "../../ft_printf/ft_printf.h"
 // #include <unistd.h>
 // #include <stdio.h>
 // #include <string.h>

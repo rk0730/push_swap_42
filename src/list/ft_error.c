@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:18:27 by rkitao            #+#    #+#             */
-/*   Updated: 2024/05/14 11:59:15 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/02 01:42:46 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * 問題なければint配列を返し、問題があればfreeしてexitする
  */
 
-#include "ft_push_swap.h"
+#include "ft_list.h"
 
 // c_boxをatoiした時にintの範囲を超えないかどうか確認する　大丈夫であればintを返し、範囲外であればexit
 static int	ft_check_range(char *str)

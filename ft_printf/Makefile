@@ -2,16 +2,18 @@ CC = cc
 AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c \
-	ft_convert_cs.c \
-	ft_convert_d.c \
-	ft_convert_u.c \
-	ft_convert_p.c \
-	ft_convert_xX.c
+SRCDIR = .
 
-TEST_SRC = main.c
+SRCS = $(SRCDIR)/ft_printf.c \
+	$(SRCDIR)/ft_convert_cs.c \
+	$(SRCDIR)/ft_convert_d.c \
+	$(SRCDIR)/ft_convert_u.c \
+	$(SRCDIR)/ft_convert_p.c \
+	$(SRCDIR)/ft_convert_xX.c
 
 OBJS = $(SRCS:.c=.o)
+
+TEST_SRC = main.c
 
 NAME = libftprintf.a
 

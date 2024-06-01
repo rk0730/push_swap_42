@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_info.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 14:44:08 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/01 16:08:54 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/02 01:43:10 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_list.h"
 
 t_node	*ft_first_node(t_node *list)
 {

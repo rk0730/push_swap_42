@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_genlist.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:35:36 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/01 14:35:43 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/02 01:43:00 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "ft_list.h"
 
 /*
  * arrayに入ったint配列をt_nodeのリストに入れる

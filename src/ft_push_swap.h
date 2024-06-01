@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error2.c                                        :+:      :+:    :+:   */
+/*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 20:18:52 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/02 01:42:51 by kitaoryoma       ###   ########.fr       */
+/*   Created: 2024/06/02 01:41:59 by kitaoryoma        #+#    #+#             */
+/*   Updated: 2024/06/02 01:42:29 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
-//arrayに同じ数字があったら1を返す
-int	ft_dup_check(int *array, int num)
-{
-	int	i;
-	int	j;
+# include "list/ft_list.h"
 
-	i = 0;
-	while (i < num)
-	{
-		j = i + 1;
-		while (j < num)
-		{
-			if (array[i] == array[j])
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
+#endif
