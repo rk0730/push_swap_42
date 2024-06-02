@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:40:47 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/02 01:41:34 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/02 13:57:40 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,18 @@ t_node	**ft_gen_list(int **array_p, int len);
 t_node	*ft_first_node(t_node *list);
 t_node	*ft_last_node(t_node *list);
 int		ft_getsize(t_node *list);
-void	ft_swap_a(t_node **list_ab);
-void	ft_swap_b(t_node **list_ab);
-void	ft_push_a(t_node **list_ab);
-void	ft_push_b(t_node **list_ab);
-void	ft_rotate_a(t_node **list_ab);
-void	ft_rotate_b(t_node **list_ab);
+// void	ft_swap_a(t_node **list_ab);
+// void	ft_swap_b(t_node **list_ab);
+// void	ft_push_a(t_node **list_ab);
+// void	ft_push_b(t_node **list_ab);
+void	ft_swap(t_node **list_ab, char c);
+void	ft_ss(t_node **list_ab);
+void	ft_push(t_node **list_ab, char c);
+void	ft_rotate(t_node **list_ab, char c);
+// void	ft_rotate_b(t_node **list_ab);
 void	ft_rr(t_node **list_ab);
-void	ft_reverse_rotate_a(t_node **list_ab);
-void	ft_reverse_rotate_b(t_node **list_ab);
+void	ft_reverse_rotate(t_node **list_ab, char c);
+// void	ft_reverse_rotate_b(t_node **list_ab);
 void	ft_rrr(t_node **list_ab);
 
 

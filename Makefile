@@ -4,6 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCDIR = src
 SRCS = $(SRCDIR)/ft_main.c \
+	$(SRCDIR)/ft_sort.c \
+	$(SRCDIR)/ft_sort2.c \
 
 OBJS = $(SRCS:.c=.o)
 

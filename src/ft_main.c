@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:23 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 01:44:16 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/02 20:33:08 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,31 @@ void	ft_print_list(t_node **list_ab)
 {
 	int	size;
 	size = ft_getsize(list_ab[0]);
-	ft_printf("--------------------\n");
-	ft_printf("list_a size %d\n", size);
+	// ft_printf("--------------------\n");
+	ft_printf("A size %d\t", size);
 	if (size > 0)
 	{
 		list_ab[0] = ft_first_node(list_ab[0]);
 		while (list_ab[0]->data != -1)
 		{
-			ft_printf("%d\n", list_ab[0]->data);
+			ft_printf("%d ", list_ab[0]->data);
 			list_ab[0] = list_ab[0]->next;
 		}
 	}
+	ft_printf("\n");
 	size = ft_getsize(list_ab[1]);
-	ft_printf("list_b size %d\n", size);
+	ft_printf("B size %d\t", size);
 	if (size > 0)
 	{
 		list_ab[1] = ft_first_node(list_ab[1]);
 		while (list_ab[1]->data != -1)
 		{
-			ft_printf("%d\n", list_ab[1]->data);
+			ft_printf("%d ", list_ab[1]->data);
 			list_ab[1] = list_ab[1]->next;
 		}
 	}
-	ft_printf("--------------------\n");
+	ft_printf("\n");
+	// ft_printf("--------------------\n");
 }
 
 int	main(int argc, char **argv)
@@ -79,21 +81,7 @@ int	main(int argc, char **argv)
 	t_node	**list_ab = ft_gen_list(&array, len);
 	ft_print_list(list_ab);
 	//デバッグ
-	ft_reverse_rotate_a(list_ab);ft_printf("rra\n");
-	ft_print_list(list_ab);
-	ft_swap_b(list_ab);ft_printf("sb\n");
-	ft_print_list(list_ab);
-	ft_push_a(list_ab);ft_printf("pa\n");
-	ft_print_list(list_ab);
-	ft_push_b(list_ab);ft_printf("pb\n");
-	ft_print_list(list_ab);
-	ft_push_b(list_ab);ft_printf("pb\n");
-	ft_print_list(list_ab);
-	ft_reverse_rotate_b(list_ab);ft_printf("rrb\n");
-	ft_print_list(list_ab);
-	ft_rrr(list_ab);ft_printf("rrr\n");
-	ft_print_list(list_ab);
-	ft_push_a(list_ab);ft_printf("pa\n");
+	ft_sort_3(list_ab, 'a');
 	ft_print_list(list_ab);
 	//デバッグ
 	ft_free_node(list_ab[0]);
