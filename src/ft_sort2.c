@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 19:01:02 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 20:30:43 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/04 16:47:14 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,18 @@ void	ft_sort_3(t_node **list_ab, char c)
 	list = ft_first_node(list);
 	ft_sort3_h1(list, c);
 	ft_sort3_h2(list, c);
+}
+
+//sizeが3以下の場合はソートする
+void	ft_sort_mini(t_node **list_ab, char c, int size)
+{
+	if (size > 3 || size < 1)
+	{
+		ft_printf("Invalid input ft_sort_mini\n");
+		return ;
+	}
+	if (size == 2)
+		ft_sort_2(list_ab, c);
+	else if (size == 3)
+		ft_sort_3(list_ab, c);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:23 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 20:33:08 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/04 18:09:39 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,43 @@ void	ft_print_list(t_node **list_ab)
 	// ft_printf("--------------------\n");
 }
 
+void	ft_divide_top_a(t_node **list_ab, int size, int border1, int border2)
+{
+	t_node	*list;
+
+	list = ft_first_node(list_ab[0]);
+	while (size-- > 0)
+	{
+		// ft_printf("jagging %d\n", list->data);
+		if (list->data < border1)
+		{
+			// ft_printf("small\n");
+			// ft_print_list(list_ab);
+			list = list->next;
+			ft_push(list_ab, 'b');
+			ft_printf("pb\n");
+			ft_rotate(list_ab, 'b');
+			ft_printf("rb\n");
+		}
+		else if (list->data < border2)
+		{
+			// ft_printf("medium\n");
+			// ft_print_list(list_ab);
+			list = list->next;
+			ft_push(list_ab, 'b');
+			ft_printf("pb\n");
+		}
+		else
+		{
+			// ft_printf("large\n");
+			// ft_print_list(list_ab);
+			list = list->next;
+			ft_rotate(list_ab, 'a');
+			ft_printf("ra\n");
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	// ft_printf("argc %d\n", argc);
@@ -79,10 +116,8 @@ int	main(int argc, char **argv)
 	// }
 	
 	t_node	**list_ab = ft_gen_list(&array, len);
-	ft_print_list(list_ab);
 	//デバッグ
-	ft_sort_3(list_ab, 'a');
-	ft_print_list(list_ab);
+	ft_top_a(list_ab, len);
 	//デバッグ
 	ft_free_node(list_ab[0]);
 	ft_free_node(list_ab[1]);

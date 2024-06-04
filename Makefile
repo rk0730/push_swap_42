@@ -6,6 +6,11 @@ SRCDIR = src
 SRCS = $(SRCDIR)/ft_main.c \
 	$(SRCDIR)/ft_sort.c \
 	$(SRCDIR)/ft_sort2.c \
+	$(SRCDIR)/ft_utils.c \
+	$(SRCDIR)/ft_top_a.c \
+	$(SRCDIR)/ft_top_b.c \
+	$(SRCDIR)/ft_bottom_a.c \
+	$(SRCDIR)/ft_bottom_b.c
 
 OBJS = $(SRCS:.c=.o)
 
