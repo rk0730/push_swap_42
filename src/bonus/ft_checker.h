@@ -6,7 +6,13 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 23:48:19 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 23:48:20 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 01:07:44 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_CHECKER_H
+# define FT_CHECKER_H
+
+# include "../list/ft_list.h"
+
+#endif

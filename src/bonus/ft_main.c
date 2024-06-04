@@ -6,7 +6,8 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 23:47:33 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 23:47:34 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 01:08:12 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_checker.h"

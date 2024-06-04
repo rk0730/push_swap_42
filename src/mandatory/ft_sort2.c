@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 19:01:02 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/04 23:08:21 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 01:07:12 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_sort_2(t_node **list_ab, char c)
 void	ft_sort_3(t_node **list_ab, char c)
 {
 	t_node	*list;
+	char	*str;
 
 	ft_choose_list(list_ab, c, &list, NULL);
 	if (ft_getsize(list) <= 2)
@@ -41,11 +42,12 @@ void	ft_sort_3(t_node **list_ab, char c)
 		return ;
 	}
 	list = ft_first_node(list);
-	ft_sort3_h1(list, c);
-	ft_sort3_h2(list, c);
-	ft_sort3_h3(list, c);
-	ft_sort3_h4(list, c);
-	ft_sort3_h5(list, c);
+	str = ft_order(list, 0, 3);
+	ft_sort3_h1(list, c, str);
+	ft_sort3_h2(list, c, str);
+	ft_sort3_h3(list, c, str);
+	ft_sort3_h4(list, c, str);
+	free(str);
 }
 
 //sizeが3以下の場合はソートする
