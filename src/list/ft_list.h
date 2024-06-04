@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:40:47 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/02 13:57:40 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/05 03:28:05 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_malloc_exit(void);
 int		*ft_error(int argc, char **argv, int *len_p);
 int		ft_dup_check(int *array, int num);
 t_node	**ft_gen_list(int **array_p, int len);
+void	ft_choose_list(t_node **list_ab, char c, t_node **list_p, char *other);
 t_node	*ft_first_node(t_node *list);
 t_node	*ft_last_node(t_node *list);
 int		ft_getsize(t_node *list);

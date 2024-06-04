@@ -5,7 +5,6 @@ CFLAGS = -Wall -Wextra -Werror
 SRCDIR = src
 
 PS_DIR = $(SRCDIR)/mandatory
-
 PS_SRCS = $(PS_DIR)/ft_main.c \
 	$(PS_DIR)/ft_sort.c \
 	$(PS_DIR)/ft_sort2.c \
@@ -40,8 +39,11 @@ FTPRINTF = libftprintf.a
 NAME = push_swap
 
 BONUS_DIR = $(SRCDIR)/bonus
-
 BONUS_SRCS = $(BONUS_DIR)/ft_main.c
+
+GNL_DIR = $(BONUS_DIR)/get_next_line
+BONUS_SRCS += $(GNL_DIR)/get_next_line.c \
+	$(GNL_DIR)/get_next_line_utils.c
 
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
@@ -67,18 +69,15 @@ $(FTPRINTF):
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean:
-	rm -f $(PS_OBJS) $(LIST_OBJS)
+	rm -f $(PS_OBJS) $(LIST_OBJS) $(BONUS_OBJS)
 	make -C $(LIBFT_DIR) clean
 	make -C $(FTPRINTF_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 	make -C $(LIBFT_DIR) fclean
 	make -C $(FTPRINTF_DIR) fclean
 
 re: fclean all
 
-# sanitize: $(OBJS) $(LIBFT) $(FTPRINTF)
-# 	$(CC) $(CFLAGS) -fsanitize=address -g -I. -o $(NAME) $(OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
-
-.PHONY: all clean fclean re sanitize
+.PHONY: all bonus clean fclean re

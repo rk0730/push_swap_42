@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 15:44:17 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 13:53:19 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/05 03:29:07 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,11 @@ void	ft_rotate(t_node **list_ab, char c)
 	t_node	*first;
 	t_node	*last;
 
-	if (c == 'a')
-		first = ft_first_node(list_ab[0]);
-	else
-		first = ft_first_node(list_ab[1]);
+	// if (c == 'a')
+	// 	first = ft_first_node(list_ab[0]);
+	// else
+	// 	first = ft_first_node(list_ab[1]);
+	ft_choose_list(list_ab, c, &first, NULL);
 	if (ft_getsize(first) <= 1)
 		return ;
 	first = ft_first_node(first);

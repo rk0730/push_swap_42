@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 14:44:08 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 13:44:11 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/05 03:31:13 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ void	ft_swap(t_node **list_ab, char c)
 	t_node	*list;
 	int		tmp;
 
-	if (c == 'a')
-		list = list_ab[0];
-	else
-		list = list_ab[1];
+	// if (c == 'a')
+	// 	list = list_ab[0];
+	// else
+	// 	list = list_ab[1];
+	ft_choose_list(list_ab, c, &list, NULL);
 	if (ft_getsize(list) <= 1)
 		return ;
 	first = ft_first_node(list);

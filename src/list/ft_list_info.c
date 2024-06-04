@@ -6,11 +6,29 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 14:44:08 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 01:43:10 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 03:27:47 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+
+void	ft_choose_list(t_node **list_ab, char c, t_node **list_p, char *other)
+{
+	if (c == 'a')
+	{
+		if (list_p)
+			*list_p = list_ab[0];
+		if (other)
+			*other = 'b';
+	}
+	else
+	{
+		if (list_p)
+			*list_p = list_ab[1];
+		if (other)
+			*other = 'a';
+	}
+}
 
 t_node	*ft_first_node(t_node *list)
 {

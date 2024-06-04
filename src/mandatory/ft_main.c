@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:23 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/04 23:15:58 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 03:36:06 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,36 +33,36 @@
 // 	system("leaks -q push_swap");
 // }
 
-void	ft_print_list(t_node **list_ab)
-{
-	int	size;
-	size = ft_getsize(list_ab[0]);
-	// ft_printf("--------------------\n");
-	ft_printf("A size %d\t", size);
-	if (size > 0)
-	{
-		list_ab[0] = ft_first_node(list_ab[0]);
-		while (list_ab[0]->data != -1)
-		{
-			ft_printf("%d ", list_ab[0]->data);
-			list_ab[0] = list_ab[0]->next;
-		}
-	}
-	ft_printf("\n");
-	size = ft_getsize(list_ab[1]);
-	ft_printf("B size %d\t", size);
-	if (size > 0)
-	{
-		list_ab[1] = ft_first_node(list_ab[1]);
-		while (list_ab[1]->data != -1)
-		{
-			ft_printf("%d ", list_ab[1]->data);
-			list_ab[1] = list_ab[1]->next;
-		}
-	}
-	ft_printf("\n");
-	// ft_printf("--------------------\n");
-}
+// void	ft_print_list(t_node **list_ab)
+// {
+// 	int	size;
+// 	size = ft_getsize(list_ab[0]);
+// 	// ft_printf("--------------------\n");
+// 	ft_printf("A size %d\t", size);
+// 	if (size > 0)
+// 	{
+// 		list_ab[0] = ft_first_node(list_ab[0]);
+// 		while (list_ab[0]->data != -1)
+// 		{
+// 			ft_printf("%d ", list_ab[0]->data);
+// 			list_ab[0] = list_ab[0]->next;
+// 		}
+// 	}
+// 	ft_printf("\n");
+// 	size = ft_getsize(list_ab[1]);
+// 	ft_printf("B size %d\t", size);
+// 	if (size > 0)
+// 	{
+// 		list_ab[1] = ft_first_node(list_ab[1]);
+// 		while (list_ab[1]->data != -1)
+// 		{
+// 			ft_printf("%d ", list_ab[1]->data);
+// 			list_ab[1] = list_ab[1]->next;
+// 		}
+// 	}
+// 	ft_printf("\n");
+// 	// ft_printf("--------------------\n");
+// }
 
 int	main(int argc, char **argv)
 {

@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:23:59 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 20:24:23 by rkitao           ###   ########.fr       */
+/*   Updated: 2024/06/05 03:27:23 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_choose_list(t_node **list_ab, char c, t_node **list_p, char *other)
-{
-	if (c == 'a')
-	{
-		if (list_p)
-			*list_p = list_ab[0];
-		if (other)
-			*other = 'b';
-	}
-	else
-	{
-		if (list_p)
-			*list_p = list_ab[1];
-		if (other)
-			*other = 'a';
-	}
-}
+// void	ft_choose_list(t_node **list_ab, char c, t_node **list_p, char *other)
+// {
+// 	if (c == 'a')
+// 	{
+// 		if (list_p)
+// 			*list_p = list_ab[0];
+// 		if (other)
+// 			*other = 'b';
+// 	}
+// 	else
+// 	{
+// 		if (list_p)
+// 			*list_p = list_ab[1];
+// 		if (other)
+// 			*other = 'a';
+// 	}
+// }
 
 //listのindex個目のnodeを含むnum個のnodeが昇順になっているか確認する
 int	ft_is_sorted(t_node **list_ab, char c, int index, int num)
