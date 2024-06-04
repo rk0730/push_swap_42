@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:41:19 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 18:30:15 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 19:42:46 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_top_b(t_node **list_ab, int size)
 	int	border1;
 	int	border2;
 
-	// ft_printf("top_b start %d\n", size);
+	ft_printf("top_b start %d\n", size);
 	i = 0;
 	if (size <= 3)
 	{
@@ -59,6 +59,8 @@ void	ft_top_b(t_node **list_ab, int size)
 			i++;
 		}
 		ft_top_a(list_ab, size);
+		ft_printf("top_b end %d\n", size);
+		ft_print_list(list_ab);
 		return ;
 	}
 
@@ -69,6 +71,6 @@ void	ft_top_b(t_node **list_ab, int size)
 	ft_bottom_a(list_ab, size / 3);
 	ft_bottom_b(list_ab, size / 3);
 
-	// ft_printf("top_b end %d\n", size);
-	// ft_print_list(list_ab);
+	ft_printf("top_b end %d\n", size);
+	ft_print_list(list_ab);
 }

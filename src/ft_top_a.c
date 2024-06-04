@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:20:40 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 18:30:20 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 19:42:38 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,19 @@ void	ft_top_a(t_node **list_ab, int size)
 	int		border1;
 	int		border2;
 
-	// ft_printf("top_a start %d\n", size);
+	ft_printf("top_a start %d\n", size);
 	
 	if(ft_is_sorted(list_ab, 'a', 0, size))
+	{
+		ft_printf("top_a end %d\n", size);
+		ft_print_list(list_ab);
 		return ;
+	}
 	if (size <= 3)
 	{
 		ft_sort_mini(list_ab, 'a', size);
+		ft_printf("top_a end %d\n", size);
+		ft_print_list(list_ab);
 		return ;
 	}
 	border1 = ft_get_min(list_ab, 'a', "top", size) + size / 3;
@@ -66,6 +72,7 @@ void	ft_top_a(t_node **list_ab, int size)
 	ft_top_b(list_ab, size / 3);
 	ft_bottom_b(list_ab, size / 3);
 
-	// ft_printf("top_a end %d\n", size);
+	ft_printf("top_a end %d\n", size);
+	ft_print_list(list_ab);
 	// ft_print_list(list_ab);
 }

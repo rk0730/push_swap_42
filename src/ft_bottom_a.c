@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:24:46 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 18:30:26 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 19:42:41 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ void	ft_bottom_a(t_node **list_ab, int size)
 	int		border1;
 	int		border2;
 
-	// ft_printf("bottom_a start %d\n", size);
+	ft_printf("bottom_a start %d\n", size);
 	if (size <= 3)
 	{
 		ft_bottom_to_top(list_ab, size);
 		ft_sort_mini(list_ab, 'a', size);
+		ft_printf("bottom_a end %d\n", size);
+		ft_print_list(list_ab);
 		return ;
 	}
 	//bottomの要素が多く、topに回した方がいい
@@ -89,6 +91,8 @@ void	ft_bottom_a(t_node **list_ab, int size)
 	{
 		ft_bottom_to_top(list_ab, size);
 		ft_top_a(list_ab, size);
+		ft_printf("bottom_a end %d\n", size);
+		ft_print_list(list_ab);
 		return ;
 	}
 	border1 = ft_get_min(list_ab, 'a', "bottom", size) + size / 3;
@@ -98,6 +102,6 @@ void	ft_bottom_a(t_node **list_ab, int size)
 	ft_top_b(list_ab, size / 3);
 	ft_bottom_b(list_ab, size / 3);
 
-	// ft_printf("bottom_a end %d\n", size);
-	// ft_print_list(list_ab);
+	ft_printf("bottom_a end %d\n", size);
+	ft_print_list(list_ab);
 }

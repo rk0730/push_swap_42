@@ -1,0 +1,56 @@
+top_a start 10
+ra
+ra
+pb
+rb
+ra
+pb
+pb
+ra
+pb
+rb
+pb
+pb
+rb
+bottom_a start 4
+top_a start 4
+pb
+rb
+ra
+ra
+pb
+bottom_a start 2
+bottom_a end 2
+top_b start 1
+pa
+top_a start 1
+top_a end 1
+top_b end 1
+bottom_b start 1
+rrb
+pa
+top_a start 1
+top_a end 1
+bottom_b end 1
+top_a end 4
+bottom_a end 4
+top_b start 3
+pa
+pa
+pa
+top_a start 3
+sa
+top_a end 3
+top_b end 3
+bottom_b start 3
+rrb
+pa
+rrb
+pa
+rrb
+pa
+top_a start 3
+rra
+top_a end 3
+bottom_b end 3
+top_a end 10
