@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:23 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/04 18:09:39 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 23:15:58 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@
 // 	return (NULL);
 // }
 
-#include <libc.h>
+// #include <libc.h>
 
-__attribute__((destructor))
-static void destructor() {
-	system("leaks -q push_swap");
-}
+// __attribute__((destructor))
+// static void destructor() {
+// 	system("leaks -q push_swap");
+// }
 
 void	ft_print_list(t_node **list_ab)
 {
@@ -64,56 +64,11 @@ void	ft_print_list(t_node **list_ab)
 	// ft_printf("--------------------\n");
 }
 
-void	ft_divide_top_a(t_node **list_ab, int size, int border1, int border2)
-{
-	t_node	*list;
-
-	list = ft_first_node(list_ab[0]);
-	while (size-- > 0)
-	{
-		// ft_printf("jagging %d\n", list->data);
-		if (list->data < border1)
-		{
-			// ft_printf("small\n");
-			// ft_print_list(list_ab);
-			list = list->next;
-			ft_push(list_ab, 'b');
-			ft_printf("pb\n");
-			ft_rotate(list_ab, 'b');
-			ft_printf("rb\n");
-		}
-		else if (list->data < border2)
-		{
-			// ft_printf("medium\n");
-			// ft_print_list(list_ab);
-			list = list->next;
-			ft_push(list_ab, 'b');
-			ft_printf("pb\n");
-		}
-		else
-		{
-			// ft_printf("large\n");
-			// ft_print_list(list_ab);
-			list = list->next;
-			ft_rotate(list_ab, 'a');
-			ft_printf("ra\n");
-		}
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	// ft_printf("argc %d\n", argc);
 	int len;
 	int *array = ft_error(argc, argv, &len);
-	
-	// ft_printf("len %d\n", len);
-	// int i = 0;
-	// while (i < len)
-	// {
-	// 	ft_printf("%d\n", array[i]);
-	// 	i++;
-	// }
 	
 	t_node	**list_ab = ft_gen_list(&array, len);
 	//デバッグ
@@ -124,3 +79,10 @@ int	main(int argc, char **argv)
 	free(list_ab);
 	return (0);
 }
+
+// #include <libc.h>
+
+// __attribute__((destructor))
+// static void destructor() {
+// 	system("leaks -q push_swap");
+// }

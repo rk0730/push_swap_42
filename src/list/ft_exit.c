@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:24:22 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 01:42:55 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 23:45:08 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,18 @@ void	ft_free_box(char ***box_p)
 void	ft_free_box_exit(char ***box_p)
 {
 	ft_free_box(box_p);
-	ft_printf("Error\n");
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(1);
 }
 
 void	ft_exit(void)
 {
-	ft_printf("Error\n");
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(1);
 }
 
 void	ft_malloc_exit(void)
 {
-	ft_printf("malloc Error\n");
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:41:19 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 19:42:46 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 23:09:45 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,18 @@ static void	ft_divide_top_b(t_node **list_ab, int size, int border1, int border2
 		if (list->data < border1)
 		{
 			list = list->next;
-			ft_rotate(list_ab, 'b');
-			ft_printf("rb\n");
+			ft_rotate_write(list_ab, 'b');
 		}
 		else if (list->data < border2)
 		{
 			list = list->next;
-			ft_push(list_ab, 'a');
-			ft_printf("pa\n");
-			ft_rotate(list_ab, 'a');
-			ft_printf("ra\n");
+			ft_push_write(list_ab, 'a');
+			ft_rotate_write(list_ab, 'a');
 		}
 		else
 		{
 			list = list->next;
-			ft_push(list_ab, 'a');
-			ft_printf("pa\n");
+			ft_push_write(list_ab, 'a');
 		}
 	}
 }
@@ -48,29 +44,28 @@ void	ft_top_b(t_node **list_ab, int size)
 	int	border1;
 	int	border2;
 
-	ft_printf("top_b start %d\n", size);
+	// ft_printf("top_b start %d\n", size);
 	i = 0;
 	if (size <= 3)
 	{
 		while (i < size)
 		{
-			ft_push(list_ab, 'a');
-			ft_printf("pa\n");
+			ft_push_write(list_ab, 'a');
 			i++;
 		}
 		ft_top_a(list_ab, size);
-		ft_printf("top_b end %d\n", size);
-		ft_print_list(list_ab);
+		// ft_printf("top_b end %d\n", size);
+		// ft_print_list(list_ab);
 		return ;
 	}
 
-	border1 = ft_get_min(list_ab, 'b', "bottom", size) + size / 3;
+	border1 = ft_get_min(list_ab, 'b', "top", size) + size / 3;
 	border2 = border1 + size / 3;
 	ft_divide_top_b(list_ab, size, border1, border2);
 	ft_top_a(list_ab, size / 3 + size % 3);
 	ft_bottom_a(list_ab, size / 3);
 	ft_bottom_b(list_ab, size / 3);
 
-	ft_printf("top_b end %d\n", size);
-	ft_print_list(list_ab);
+	// ft_printf("top_b end %d\n", size);
+	// ft_print_list(list_ab);
 }

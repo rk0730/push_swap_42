@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:18:27 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/02 01:42:46 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/04 23:20:12 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static int	ft_check_num(char **c_box)
 				return (1);
 			j++;
 		}
+		if (c_box[i][0] == '-' && c_box[i][1] == '\0')
+			return (1);
 		i++;
 	}
 	return (0);
