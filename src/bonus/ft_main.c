@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 23:47:33 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/05 03:40:38 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 09:26:57 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 // 	// ft_printf("--------------------\n");
 // }
 
-int	ft_help1(t_node **list_ab, char *line)
+static int	ft_help1(t_node **list_ab, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
 		ft_swap(list_ab, 'a');
@@ -60,7 +60,7 @@ int	ft_help1(t_node **list_ab, char *line)
 	return (1);
 }
 
-int	ft_help2(t_node **list_ab, char *line)
+static int	ft_help2(t_node **list_ab, char *line)
 {
 	if (ft_strncmp(line, "ra\n", 3) == 0)
 		ft_rotate(list_ab, 'a');
