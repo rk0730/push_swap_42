@@ -6,7 +6,7 @@
 /*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 23:47:33 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/05 09:26:57 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/05 09:54:15 by kitaoryoma       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_sort_by_input(t_node **list_ab)
 	}
 }
 
-int	ft_is_sorted(t_node *list_a, int num)
+int	ft_is_finished(t_node *list_a, int num)
 {
 	// ft_choose_list(list_ab, c, &list, NULL);
 	if (num != ft_getsize(list_a))
@@ -129,7 +129,7 @@ int	main(int argc, char **argv)
 	list_ab = ft_gen_list(&array, len);
 	// ft_print_list(list_ab);
 	ft_sort_by_input(list_ab);
-	if (ft_getsize(list_ab[1]) == 0 && ft_is_sorted(list_ab[0], len))
+	if (ft_getsize(list_ab[1]) == 0 && ft_is_finished(list_ab[0], len))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
