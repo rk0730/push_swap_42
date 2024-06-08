@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:20:57 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/04 23:10:05 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 12:59:22 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-//listのtopまたはbottomからsize個分のnodeを見てその最小値を求める
 int	ft_get_min(t_node **list_ab, char c, char *position, int size)
 {
 	t_node	*list;

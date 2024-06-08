@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 19:24:22 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/04 23:45:08 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 13:00:06 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-//1周全てfreeする
 void	ft_free_node(t_node *list)
 {
 	t_node	*tmp;

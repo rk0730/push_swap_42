@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:17:23 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/05 03:36:06 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 13:08:56 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-// #include <libc.h>
-// #include <errno.h>
+int	main(int argc, char **argv)
+{
+	int		len;
+	int		*array;
+	t_node	**list_ab;
 
-// int malloc_count = 10;
-
-// //マロックを無理やり失敗させる
-// void *malloc(size_t size)
-// {
-// 	static int i = 0;
-// 	while (i++ < malloc_count)
-// 		return (calloc(size, 1));
-// 	return (NULL);
-// }
+	array = ft_error(argc, argv, &len);
+	list_ab = ft_gen_list(&array, len);
+	ft_top_a(list_ab, len);
+	ft_free_node(list_ab[0]);
+	ft_free_node(list_ab[1]);
+	free(list_ab);
+	return (0);
+}
 
 // #include <libc.h>
 
@@ -62,27 +63,4 @@
 // 	}
 // 	ft_printf("\n");
 // 	// ft_printf("--------------------\n");
-// }
-
-int	main(int argc, char **argv)
-{
-	// ft_printf("argc %d\n", argc);
-	int len;
-	int *array = ft_error(argc, argv, &len);
-	
-	t_node	**list_ab = ft_gen_list(&array, len);
-	//デバッグ
-	ft_top_a(list_ab, len);
-	//デバッグ
-	ft_free_node(list_ab[0]);
-	ft_free_node(list_ab[1]);
-	free(list_ab);
-	return (0);
-}
-
-// #include <libc.h>
-
-// __attribute__((destructor))
-// static void destructor() {
-// 	system("leaks -q push_swap");
 // }

@@ -3,42 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:23:59 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/05 03:27:23 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 13:09:25 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-// void	ft_choose_list(t_node **list_ab, char c, t_node **list_p, char *other)
-// {
-// 	if (c == 'a')
-// 	{
-// 		if (list_p)
-// 			*list_p = list_ab[0];
-// 		if (other)
-// 			*other = 'b';
-// 	}
-// 	else
-// 	{
-// 		if (list_p)
-// 			*list_p = list_ab[1];
-// 		if (other)
-// 			*other = 'a';
-// 	}
-// }
-
-//listのindex個目のnodeを含むnum個のnodeが昇順になっているか確認する
 int	ft_is_sorted(t_node **list_ab, char c, int index, int num)
 {
 	t_node	*list;
 
-	// if (c == 'a')
-	// 	list = list_ab[0];
-	// else
-	// 	list = list_ab[1];
 	ft_choose_list(list_ab, c, &list, NULL);
 	if (index + num > ft_getsize(list) || ft_getsize(list) == 0)
 	{
@@ -86,7 +63,6 @@ static void	ft_order_h(t_node *list, int num, char *str)
 	str[num] = '\0';
 }
 
-// index個目から見てnum個のnodeがどんな順番になっているか文字列で表示する
 char	*ft_order(t_node *list, int index, int num)
 {
 	char	*str;

@@ -3,40 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_genlist.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:35:36 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/02 01:43:00 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 13:00:19 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-/*
- * arrayに入ったint配列をt_nodeのリストに入れる
- * 次にdataをその数字が何番目に小さいかという値に置き換える
- * [詳細な説明や使用方法]
- * 問題なければt_nodeのポインタを返し、問題があればfreeして終了
- */
-
-// //firstからnum個のt_nodeをfreeして終了する
-// static void	ft_free_node(t_node *first, int num)
-// {
-// 	int		i;
-// 	t_node	*tmp;
-
-// 	i = 0;
-// 	tmp = first;
-// 	while (i < num - 1)
-// 	{
-// 		tmp = tmp->next;
-// 		free(tmp->prev);
-// 		i++;
-// 	}
-// 	free(tmp);
-// }
-
-//num+1個のt_nodeを生成し、番兵ノードのポインタを返す　各t_nodeのdataにはarrayの値を入れる 番兵ノードのdataには-1を入れる
 static t_node	*ft_new_list(int *array, int num)
 {
 	int		i;
@@ -66,7 +41,6 @@ static t_node	*ft_new_list(int *array, int num)
 	return (result);
 }
 
-//arrayをソートする
 static void	ft_sort_array(int *array, int len)
 {
 	int	i;
@@ -91,7 +65,6 @@ static void	ft_sort_array(int *array, int len)
 	}
 }
 
-//arrayをソートした配列を作って返す　arrayの値は変更しない
 static int	*ft_gen_sort_array(int *array, int len)
 {
 	int	*sort_array;

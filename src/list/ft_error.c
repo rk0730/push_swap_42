@@ -3,22 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:18:27 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/04 23:20:12 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 12:59:59 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- * プログラムに与えられた引数のエラーを処理する関数
- * [詳細な説明や使用方法]
- * 問題なければint配列を返し、問題があればfreeしてexitする
- */
-
 #include "ft_list.h"
 
-// c_boxをatoiした時にintの範囲を超えないかどうか確認する　大丈夫であればintを返し、範囲外であればexit
 static int	ft_check_range(char *str)
 {
 	int		sign;
@@ -45,7 +38,6 @@ static int	ft_check_range(char *str)
 	return (sign * (int)result);
 }
 
-// c_boxに数字以外の文字がないかどうかを確認する　エラーがあれば1を返す、なければ0を返す
 static int	ft_check_num(char **c_box)
 {
 	int	i;
@@ -70,7 +62,6 @@ static int	ft_check_num(char **c_box)
 	return (0);
 }
 
-// c_boxからnum_boxを生成する
 static int	*ft_gen_num_array(char **c_box, int *len_p)
 {
 	int	*num_box;

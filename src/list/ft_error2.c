@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 20:18:52 by kitaoryoma        #+#    #+#             */
-/*   Updated: 2024/06/02 01:42:51 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 13:00:03 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-//arrayに同じ数字があったら1を返す
 int	ft_dup_check(int *array, int num)
 {
 	int	i;

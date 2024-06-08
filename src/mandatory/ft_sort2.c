@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitaoryoma <kitaoryoma@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rkitao <rkitao@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 19:01:02 by rkitao            #+#    #+#             */
-/*   Updated: 2024/06/05 01:07:12 by kitaoryoma       ###   ########.fr       */
+/*   Updated: 2024/06/08 12:58:55 by rkitao           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-//先頭の2つのnodeを昇順にする
 void	ft_sort_2(t_node **list_ab, char c)
 {
 	t_node	*list;
@@ -50,7 +49,6 @@ void	ft_sort_3(t_node **list_ab, char c)
 	free(str);
 }
 
-//sizeが3以下の場合はソートする
 void	ft_sort_mini(t_node **list_ab, char c, int size)
 {
 	if (size > 3 || size < 1)
