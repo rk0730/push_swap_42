@@ -52,12 +52,12 @@ BONUS_NAME = checker
 all: $(NAME)
 
 $(NAME): $(PS_OBJS) $(LIST_OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
-	$(CC) $(CFLAGS) -I. -o $(NAME) $^
+	$(CC) $(CFLAGS) -I. -o $@ $^
 
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(BONUS_OBJS) $(LIST_OBJS) $(LIBFT_DIR)/$(LIBFT) $(FTPRINTF_DIR)/$(FTPRINTF)
-	$(CC) $(CFLAGS) -I. -o $(BONUS_NAME) $^
+	$(CC) $(CFLAGS) -I. -o $@ $^
 
 $(LIBFT_DIR)/$(LIBFT):
 	make -C $(LIBFT_DIR) all
